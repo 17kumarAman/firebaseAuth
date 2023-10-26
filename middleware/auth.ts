@@ -11,7 +11,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     console.log(!isLogedIn);
    if(isLogedIn !== true){
         alert ('please login first')
-        return navigateTo('/login')
+        return navigateTo('/login') 
         
     }
   })

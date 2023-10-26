@@ -3,6 +3,7 @@ import {  useCounterStore } from '~/store'
 const user = useCounterStore()
 // const email = ref(user.name)
 // console.log(email, 'th');
+const count = user.count
 const decrement = user.decrement()
 
 
