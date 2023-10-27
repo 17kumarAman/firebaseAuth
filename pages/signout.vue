@@ -4,14 +4,14 @@ const user = useCounterStore()
 // const email = ref(user.name)
 // console.log(email, 'th');
 const count = user.count
-const decrement = user.decrement()
+// const decrement = user.decrement()
 
 
 
 const signOut = async () => {
     await signOutUser();
     console.log('signout');
-    decrement
+    user.decrement()
     // email = ''
 };
 
