@@ -1,17 +1,24 @@
 <template>
-    <h1 class="mt-10 text-3xl text-center font-bold"><h1>Welcome {{ email }}</h1></h1>
+    <h1 class="mt-10 text-3xl text-center font-bold"><h1>{{ $t('welcome') }} {{ email }}</h1></h1>
     <!-- <h1>Welcome {{ email }}</h1> -->
-    
+
+
+
+
+
 
     
 
 </template>
 <script setup>
+
+
+const { locale } = useI18n()
 // console.clear();
 definePageMeta({
   middleware: defineNuxtRouteMiddleware((to, from) => {
-    console.log('to', to);
-    console.log('from', from);
+    // console.log('to', to);
+    // console.log('from', from);
   }),
 });
 import { useCounterStore } from '~/store';

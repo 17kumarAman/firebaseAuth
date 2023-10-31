@@ -3,9 +3,18 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     // ...
-    '@pinia/nuxt','@nuxtjs/tailwindcss'
+    '@pinia/nuxt','@nuxtjs/tailwindcss','@nuxtjs/i18n'
   ],
-ssr:true,
-// csr:false
+  i18n: {
+    vueI18n: 'plugins/i18n.config.ts' ,
+    strategy: 'prefix_except_default' ,
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',  // recommended
+    }
+
+  }
 
 })

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useCounterStore } from "~/store";
 const user = useCounterStore();
-const name = user.count;
+const name = computed(() => user.count)
+
 const email = ref(user.name);
 const set = user.double;
 
@@ -28,7 +29,10 @@ async function handleRegistration() {
   user.increment();
   user.name = creds.email;
   console.log(creds.email);
+  return navigateTo('/post')
 }
+
+
 </script>
 
 <template>
@@ -41,7 +45,7 @@ async function handleRegistration() {
       @submit.prevent="handleRegistration"
       class="grid pt-10"
     >
-      <h2 class="ml-auto mb-8 mr-auto">Login</h2>
+      <h2 class="ml-auto mb-8 mr-auto">{{ $t('Login') }}</h2>
       <!-- <input class="w-80 display:block h-10 pl-5 mb-8 ml-auto mr-auto border border-sky-300" type="text" v-model="name"
             placeholder="Enter Name"> -->
       <input
@@ -58,16 +62,16 @@ async function handleRegistration() {
       />
       <button
         type="submit"
-        class="w-80 h-10 cursor-pointer pl-5 display:block text-white bg-sky-300 ml-auto mr-auto"
+        class="w-80 h-10 cursor-pointer pl-5 display:block text-white bg-sky-300 ml-auto mr-auto font-bold"
       >
-        Login
+      {{ $t('Login') }}
       </button>
 
       <NuxtLink
         to="/signup"
         class="w-80 h-10 cursor-pointer text-center mt-1 display:block underline ml-auto mr-auto"
       >
-        Create an account</NuxtLink
+      {{$t('Account')}}</NuxtLink
       >
     </form>
     <form
@@ -75,7 +79,7 @@ async function handleRegistration() {
       @submit.prevent="handleRegistration"
       class="grid pt-10"
     >
-      <h2 class="ml-auto mr-auto">Login</h2>
+      <h2 class="ml-auto mr-auto">{{$t('Login')}}</h2>
       <h1
         class="w-80 h-10 cursor-pointer pl-5 display:block text-red-900 ml-auto text-center mr-auto"
       >
@@ -106,7 +110,7 @@ async function handleRegistration() {
         to="/signup"
         class="w-80 h-10 cursor-pointer text-center mt-1 display:block underline ml-auto mr-auto"
       >
-        Create an account</NuxtLink
+        {{$t('Account')}}</NuxtLink
       >
     </form>
     <!-- <h1>{{ email }}</h1> -->

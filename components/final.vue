@@ -50,7 +50,7 @@ function previousPage() {
 <template>
   <div>
     <div class="border border-green-600 h-max">
-      <h1>green</h1>
+      
 
       <div class="grid md:grid-cols-4 sm:grid-cols-1 justify-items-center ">
         <div v-for="e in data" class="border   mr-1 mt-1 mb-1 bg-cyan-50 text-center h-48 ">
@@ -69,11 +69,9 @@ function previousPage() {
 
     <hr>
     <footer class=" mx-auto text-center  ">
-      <h1 class="textl-2xl ">Pageno{{ currentPage + 1 }} of {{ totalpage + 1 }}</h1>
-      <button @click="previousPage" class="ml-3 font-bold text-xl w-40 rounded-xl bg-slate-500 h-8 float-left">Prev
-        Page</button>
-      <button @click="nextPage" class=" mr-3 font-bold text-xl w-40 rounded-xl bg-slate-500 h-8 float-right "> Next
-        Page</button>
+      <h1 class="textl-2xl ">{{$t('Page')}}{{ currentPage + 1 }} {{$t('of')}} {{ totalpage + 1 }}</h1>
+      <button @click="previousPage" class="ml-3 font-bold text-xl w-40 rounded-xl bg-slate-500 h-8 float-left">{{$t('Prev')}}</button>
+      <button @click="nextPage" class=" mr-3 font-bold text-xl w-40 rounded-xl bg-slate-500 h-8 float-right "> {{$t('Next')}}</button>
     </footer>
   </div>
 </template>

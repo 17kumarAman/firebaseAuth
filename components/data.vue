@@ -17,14 +17,16 @@ const arr = computed(() => ((s.length > 0 ? (s.slice(currentPage.value * 8, curr
 
 </script>
 
-<template>
-  <h1>green</h1>
+<template
+class="bg-cyan-50">
+ 
 
-  <table class="border ml-2 mr-2 border-black">
+  <table class="border ml-2 mr-2 border-black mt-2 ">
     <tr class="border border-black">
       <th class="border border-black pl-2" >Id</th>
       <th class="border border-black pl-2" >Title</th>
       <th class="border border-black pl-2" >Body</th>
+      <th class="border border-black pl-2" >Go to </th>
     </tr>
     <tr v-for="e in s" class="border border-1 border-black ">
       <td class="border border-black pl-2" >{{ e.id }}</td>

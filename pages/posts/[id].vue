@@ -13,8 +13,8 @@ console.log(data);
 
 <template>
    <div > 
-      <p>product details for element {{ id }}</p>
-      <h1>{{ data.title }}</h1>
+      <p class="text-center text-6xl capitalize mt-4 font-bold shadow-sm ">product details for element {{ id }}</p>
+      <h1 class="text-3xl pl-7">{{ data.title }}</h1>
       <p>{{ data.body }}</p>
    </div>
    
